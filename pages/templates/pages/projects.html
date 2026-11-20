@@ -1,0 +1,44 @@
+{% extends "pages/base.html" %}
+{% block title %} Projects | My Portfolio {% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <p class="section-label">MY WORK</p>
+
+  <h1>Featured <span>Projects</span></h1>
+
+  <p>
+    A collection of projects, experiments, and things I've been learning and
+    building.
+  </p>
+</section>
+
+<section class="projects-section">
+  <div class="projects-grid">
+    {% for project in projects %}
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-icon">âŒ˜</span>
+        <span class="project-number">PROJECT 0{{ forloop.counter }}</span>
+      </div>
+
+      <h2>{{ project.title }}</h2>
+
+      <p class="project-description">{{ project.description }}</p>
+
+      <div class="project-technology">
+        <span>TECHNOLOGY</span>
+        <p>{{ project.technology }}</p>
+      </div>
+    </div>
+
+    {% empty %}
+
+    <p>No projects have been added yet.</p>
+
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

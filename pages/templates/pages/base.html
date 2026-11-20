@@ -1,0 +1,39 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'pages/css/style.css' %}" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <header class="site-header">
+      <nav class="navbar">
+        <a href="{% url 'home' %}" class="logo"> Portfolio<span>.</span> </a>
+
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'projects' %}">Projects</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>{% block content %} {% endblock %}</main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+
+      <p>Built with Python and Django.</p>
+    </footer>
+  </body>
+</html>

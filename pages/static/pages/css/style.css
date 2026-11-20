@@ -1,0 +1,615 @@
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --background: #0b0f19;
+  --surface: #121927;
+  --surface-light: #192337;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #8b7cff;
+  --accent-light: #b5adff;
+  --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+span {
+  color: var(--accent);
+}
+
+section {
+  width: 100%;
+}
+
+/* =========================================
+   2. NAVIGATION BAR
+========================================= */
+
+.site-header {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11, 15, 25, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+}
+
+.navbar {
+  max-width: 1150px;
+  margin: auto;
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-light);
+}
+
+/* =========================================
+   3. HOME PAGE HERO SECTION
+========================================= */
+
+.hero-section {
+  max-width: 1150px;
+  min-height: 620px;
+  margin: auto;
+  padding: 100px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-greeting,
+.section-label {
+  color: var(--accent-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.15;
+  margin-bottom: 15px;
+}
+
+.hero-content h2 {
+  font-size: 24px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.hero-description {
+  max-width: 570px;
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #7565f0;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   4. HOME PAGE HERO CARD
+========================================= */
+
+.hero-card {
+  width: 310px;
+  min-width: 260px;
+  height: 310px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 25px;
+  background: linear-gradient(145deg, #192337, #111827);
+  border: 1px solid var(--border);
+
+  box-shadow: 0 20px 70px rgba(139, 124, 255, 0.12);
+
+  transition: 0.4s;
+}
+
+.hero-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 80px rgba(139, 124, 255, 0.2);
+}
+
+.hero-card-inner {
+  text-align: center;
+  padding: 25px;
+}
+
+.hero-icon {
+  display: block;
+  font-size: 65px;
+  margin-bottom: 25px;
+}
+
+.hero-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.hero-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================
+   5. INTRODUCTION SECTION
+========================================= */
+
+.intro-section {
+  max-width: 850px;
+  margin: 30px auto 100px;
+  padding: 65px 35px;
+  text-align: center;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.intro-section h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.intro-section > p:not(.section-label) {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.text-link {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.text-link:hover {
+  color: white;
+}
+
+/* =========================================
+   6. COMMON PAGE HEADINGS
+========================================= */
+
+.page-hero {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 25px 65px;
+}
+
+.page-hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(38px, 5vw, 55px);
+  margin-bottom: 15px;
+}
+
+.page-hero > p:last-child {
+  color: var(--muted);
+}
+
+/* =========================================
+   7. ABOUT PAGE
+========================================= */
+
+.about-section {
+  max-width: 1050px;
+  margin: auto;
+  padding: 30px 30px 100px;
+}
+
+.about-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 35px;
+  margin-bottom: 35px;
+}
+
+.about-content h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.detail-card {
+  padding: 25px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.detail-number {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.detail-card h3 {
+  margin: 12px 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.detail-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================================
+   8. PROJECTS PAGE
+========================================= */
+
+.projects-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px 30px 110px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.project-card {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  transition: 0.35s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 40px rgba(139, 124, 255, 0.1);
+}
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.project-icon {
+  font-size: 28px;
+}
+
+.project-number {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.project-card h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.project-description {
+  color: var(--muted);
+  font-size: 14px;
+  min-height: 75px;
+}
+
+.project-technology {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 25px;
+}
+
+.project-technology span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.project-technology p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* =========================================
+   9. CONTACT PAGE
+========================================= */
+
+.contact-section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px 30px 110px;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-intro h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.contact-intro p {
+  color: var(--muted);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  text-align: center;
+  padding: 30px 15px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  transition: 0.3s;
+  overflow-wrap: anywhere;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.contact-icon {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  margin-bottom: 10px;
+}
+
+.contact-card a {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-card a:hover {
+  color: var(--accent-light);
+}
+
+/* =========================================
+   10. FOOTER
+========================================= */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
+
+/* =========================================
+   11. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 850px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 75px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-card {
+    width: 280px;
+    height: 280px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 17px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero-section {
+    padding: 65px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 43px;
+  }
+
+  .hero-content h2 {
+    font-size: 19px;
+  }
+
+  .intro-section {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+
+  .intro-section h2 {
+    font-size: 27px;
+  }
+
+  .about-details,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    padding-top: 70px;
+  }
+}
+
+/* Profile Picture */
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #8b5cf6;
+  margin-bottom: 25px;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+}
+
+/* CV Download Button */
+
+.btn-download {
+  border: 1px solid var(--accent);
+  color: var(--accent-light);
+}
+
+.btn-download:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+}

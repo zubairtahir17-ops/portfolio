@@ -1,0 +1,53 @@
+﻿{% extends "pages/base.html" %}
+
+{% block title %}Contact | My Portfolio{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <p class="section-label">GET IN TOUCH</p>
+
+    <h1>Let's <span>Connect</span></h1>
+
+    <p>
+        Have a question, an opportunity, or an interesting idea?
+        Feel free to reach out.
+    </p>
+</section>
+
+<section class="contact-section">
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <span class="contact-icon">✉</span>
+            <h3>Email</h3>
+
+            <a href="mailto:{{ email }}">
+                {{ email }}
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <span class="contact-icon">⌘</span>
+            <h3>GitHub</h3>
+
+            <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">
+                {{ github }}
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <span class="contact-icon">in</span>
+            <h3>LinkedIn</h3>
+
+            <a href="{{ linkedin_url }}" target="_blank" rel="noopener noreferrer">
+                {{ linkedin }}
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

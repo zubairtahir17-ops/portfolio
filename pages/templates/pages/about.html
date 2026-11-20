@@ -1,0 +1,56 @@
+{% extends "pages/base.html" %}
+
+{% block title %}About | My Portfolio{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <p class="section-label">GET TO KNOW ME</p>
+
+    <h1>About <span>Me</span></h1>
+
+    <p>A little about my background, interests, and what drives me.</p>
+</section>
+
+<section class="about-section">
+
+    <div class="about-content">
+        <h2>Who am I?</h2>
+
+        <p>{{ description }}</p>
+
+        <p>
+            I believe in learning by building. I enjoy understanding the fundamentals
+            of technology and applying them to practical problems.
+        </p>
+
+        <p>
+            My current journey involves strengthening my programming fundamentals
+            while exploring different areas of computer engineering.
+        </p>
+
+        <p><strong>Location:</strong> {{ location }}</p>
+        <p><strong>University:</strong> COMSATS University Islamabad</p>
+    </div>
+
+    <div class="about-details">
+
+        {% for interest in interests %}
+        <div class="detail-card">
+
+            <span class="detail-number">
+                0{{ forloop.counter }}
+            </span>
+
+            <h3>{{ interest.title }}</h3>
+
+            <p>{{ interest.description }}</p>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
